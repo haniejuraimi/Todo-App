@@ -25,10 +25,14 @@ var app = new Vue({
 
         deleteTodo: function(index) {
             this.todos.splice(index, 1);
+            this.persistData();
+
         },
 
         toggleDone: function(index) {
             this.todos[index].isDone= !this.todos[index].isDone;
+            this.persistData();
+
         },
 
         persistData: function() {
